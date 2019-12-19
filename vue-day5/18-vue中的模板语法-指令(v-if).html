@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>1907-vue2x</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body >
+
+<div id="app" v-cloak>
+    <a @click="flag = true">新闻</a> <a @click="flag = false">电影</a>
+    <hr>
+   <div v-if="flag">
+       <h1>新闻</h1>
+   </div>
+    <div v-else>
+        <h1>电影</h1>
+    </div>
+    <hr>
+    您选择的课程是: <select v-model="cource">
+    <option value="vue">vue</option>
+    <option value="angular">angular</option>
+</select>
+    <ul>
+        <li v-if="cource=='vue'">vue</li>
+        <li v-else-if="cource =='angular'">angular</li>
+        <li v-else>react</li>
+    </ul>
+
+    <div v-if="false">show or hide</div>
+    <div v-show="false">show or hide</div>
+</div>
+
+
+<script src="bower_components/vue/dist/vue.js"></script>
+<script>
+    (function () {
+
+        new Vue({
+            el:"#app",
+            data:{
+                flag:true,
+                cource:"vue"
+            }
+        })
+
+
+    })()
+</script>
+</body>
+</html>

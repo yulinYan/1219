@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li>
+            <h1>{{users[0].name}}</h1>
+            <p>{{users[0].profile}}</p>
+        </li>
+        <li>
+            <h1>{{users[1].name}}</h1>
+            <p>{{users[1].profile}}</p>
+        </li>
+    </ul>
+</div>
+<div id="app2"></div>
+</body>
+</html>
+<script src="../bower_components/vue/dist/vue.js"></script>
+<script >
+    (function() {
+
+        new Vue({
+            el:"#app",
+            data:{
+                users:[
+                    {
+                        name:"玉琳延",
+                        profile:"23"
+                    },
+                    {
+                        name:"延玉琳",
+                        profile:"24"
+                    }
+                ]
+            },
+
+        })
+
+       new Vue({
+           el:"#app2",
+           data:{
+               users:[
+           {
+               name:"玉琳延",
+               profile:"23"
+           },
+           {
+               name:"延玉琳",
+               profile:"24"
+           }
+       ]
+   },
+    template:`
+    <section>
+    <ul>
+        <li>
+            <h1>{{users[0].name}}</h1>
+            <p>{{users[0].profile}}</p>
+        </li>
+        <li>
+            <h1>{{users[1].name}}</h1>
+            <p>{{users[1].profile}}</p>
+        </li>
+    </ul>
+</section>
+    `
+   })
+   })()
+
+</script>
